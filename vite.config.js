@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
-  base: '/',
+  base: '/travel_box/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

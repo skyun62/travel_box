@@ -27,7 +27,7 @@ const shoppingCards = [
 //圖中有圖
 import PhotoMosaic from '@/components/PhotoMosaic.vue'
 //表格
-import DataTable from '@/components/Datatable.vue'
+import DataTable from '@/components/DataTable.vue'
 //圖文區塊(三大區)
 import TextImageBlock from '@/components/TextImageBlock.vue'
 //地圖資訊

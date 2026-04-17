@@ -1,4 +1,7 @@
 <script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
 const props = defineProps({
     img: { type: String, required: true },
     smallTitle: { type: String, default: 'Card title' },
@@ -6,9 +9,9 @@ const props = defineProps({
     price: { type: Number, default: 0 },
     index: { type: Number, default: 0 },
 })
- 
+
 const emit = defineEmits(['add'])
- 
+
 function addToCart() {
     // 寫入 localStorage（與原始邏輯相同）
     let cart = JSON.parse(localStorage.getItem('cart')) || []
@@ -19,13 +22,15 @@ function addToCart() {
         price: props.price,
     })
     localStorage.setItem('cart', JSON.stringify(cart))
- 
+
     // 通知父層
     emit('add', { index: props.index })
     alert('已加入購物車')
+
+    router.push('/cart/step1')
 }
 </script>
- 
+
 <template>
     <div class="col-12 col-sm-6 col-md-3 mt-5 mb-2">
         <div class="card p-2 hover-scale">
@@ -41,18 +46,21 @@ function addToCart() {
         </div>
     </div>
 </template>
- 
+
 <style scoped>
 .hover-scale {
     transition: transform 0.3s;
 }
+
 .hover-scale:hover {
     transform: scale(1.05);
 }
+
 .price {
     font-weight: 500;
     color: #ba9393;
 }
+
 .shopping-btn {
     background: none;
     border: 1px solid #ba9393;
@@ -62,6 +70,7 @@ function addToCart() {
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
 }
+
 .shopping-btn:hover {
     background: #ba9393;
     color: #fff;

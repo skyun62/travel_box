@@ -288,7 +288,7 @@ const currentTab = ref('NEWS')
         <!-- 地圖資訊 -->
         <MapContact @submit="(data) => console.log('表單送出', data)" />
         <!-- blog卡片 -->
-        <section class="row" id="cardlist">
+        <section class="row py-5" id="cardlist">
             <BlogCard v-for="(card, index) in blogCards" :key="index" :img="card.img" :smallTitle="card.smallTitle"
                 :description="card.description" />
         </section>
@@ -394,7 +394,7 @@ const currentTab = ref('NEWS')
 .tab-menu {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 0px;
     margin-bottom: 0px;
     /* 與內容區的間距 */
 }

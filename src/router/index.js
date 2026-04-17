@@ -5,6 +5,11 @@ import AboutView from '@/views/AboutView.vue'
 import AlbumView from '@/views/AlbumView.vue'
 import PhotoView from '@/views/PhotoView.vue'
 
+import CartStep1 from '@/views/CartStep1.vue'
+import CartStep2 from '@/views/CartStep2.vue'
+import CartStep3 from '@/views/CartStep3.vue'
+import CartStep4 from '@/views/CartStep4.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -29,8 +34,13 @@ const router = createRouter({
       name: 'photo',
       component: PhotoView,
     },
-    
+    { path: '/cart/step1', name: 'cart-step1', component: CartStep1 },
+    { path: '/cart/step2', name: 'cart-step2', component: CartStep2 },
+    { path: '/cart/step3', name: 'cart-step3', component: CartStep3 },
+    { path: '/cart/step4', name: 'cart-step4', component: CartStep4 },
   ],
 })
+
+
 
 export default router

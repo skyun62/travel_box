@@ -1,4 +1,7 @@
 <script setup>
+//Skeleton Screen
+import SkeletonScreen from '@/components/SkeletonScreen.vue';
+
 //角色role
 import Role from '@/components/Role.vue';
 
@@ -17,11 +20,16 @@ onMounted(() => {
 })
 //購物卡片
 import ShoppingCard from '@/components/ShoppingCard.vue'
+import lamp1 from '@/assets/img/lamp_4_1.jpg'
+import lamp2 from '@/assets/img/lamp_4_2.jpg'
+import lamp3 from '@/assets/img/lamp_4_3.jpg'
+import lamp4 from '@/assets/img/lamp_4_4.jpg'
+
 const shoppingCards = [
-    { img: '/src/assets/img/sea2.jpg', smallTitle: 'Card title A', description: 'Some quick example text', price: 1399 },
-    { img: '/src/assets/img/sea2.jpg', smallTitle: 'Card title B', description: 'Some quick example text', price: 1999 },
-    { img: '/src/assets/img/sea2.jpg', smallTitle: 'Card title C', description: 'Some quick example text', price: 2999 },
-    { img: '/src/assets/img/sea2.jpg', smallTitle: 'Card title D', description: 'Some quick example text', price: 1799 },
+    { img: lamp1, smallTitle: 'Lamp A', description: 'Some quick example text', price: 1399 },
+    { img: lamp2, smallTitle: 'Lamp B', description: 'Some quick example text', price: 1999 },
+    { img: lamp3, smallTitle: 'Lamp C', description: 'Some quick example text', price: 2999 },
+    { img: lamp4, smallTitle: 'Lamp D', description: 'Some quick example text', price: 1799 },
 ]
 
 //圖中有圖
@@ -62,15 +70,19 @@ const currentTab = ref('NEWS')
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../assets/img/sea1.jpg" class="d-block w-100" alt="..." style="max-height: 70vh;">
+                    <img src="../assets/img/banner1_1.jpg" class="d-block w-100" alt="..." style="max-height: 70vh;">
+
                     <div class="text-start carousel-caption d-none d-md-block">
                         <h2 class="display-1" style="font-weight: bold;">Travel Magazine</h2>
                         <p>Some representative placeholder content for the first slide.</p>
                         <button type="button" class="btn btn-primary btn-mg">Sing up</button>
                     </div>
                 </div>
+
+
+
                 <div class="carousel-item">
-                    <img src="../assets/img/sea2.jpg" class="d-block w-100" alt="..." style="max-height: 70vh;">
+                    <img src="../assets/img/banner1_2.png" class="d-block w-100" alt="..." style="max-height: 70vh;">
                     <div class="text-center carousel-caption d-none d-md-block">
                         <h2 class="display-1" style="font-weight: bold;">Travel Magazine</h2>
                         <p>Some representative placeholder content for the second slide.</p>
@@ -78,7 +90,7 @@ const currentTab = ref('NEWS')
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../assets/img/sea4.jpg" class="d-block w-100" alt="..." style="max-height: 70vh;">
+                    <img src="../assets/img/banner1_3.jpg" class="d-block w-100" alt="..." style="max-height: 70vh;">
                     <div class="text-end carousel-caption d-none d-md-block">
                         <h2 class="display-1" style="font-weight: bold;">Travel Magazine</h2>
                         <p>Some representative placeholder content for the third slide.</p>
@@ -111,9 +123,24 @@ const currentTab = ref('NEWS')
         <section>
             <div class="container">
                 <div class="row col-12 col-lg p-5">
-                    <Role />
-                    <Role />
-                    <Role />
+                    <Role>
+                        <template #title>Poul Henningsen(丹麥)</template>
+                        <template #content>
+                            PH 燈系列發明者，開創無眩光照明
+                        </template>
+                    </Role>
+                    <Role>
+                        <template #title>Achille Castiglioni(義大利)</template>
+                        <template #content>
+                            經典拋物線 Arco 燈的創造者
+                        </template>
+                    </Role>
+                    <Role>
+                        <template #title>Ingo Maurer(德國)</template>
+                        <template #content>
+                            電燈泡轉化為藝術裝置的先驅
+                        </template>
+                    </Role>
                 </div>
             </div>
         </section>
@@ -238,7 +265,10 @@ const currentTab = ref('NEWS')
         <section class="row">
             <ShoppingCard v-for="(item, index) in shoppingCards" :key="index" :img="item.img"
                 :smallTitle="item.smallTitle" :description="item.description" :price="item.price" :index="index" />
+
         </section>
+
+
 
         <!-- 圖中有圖的標題 -->
         <section>

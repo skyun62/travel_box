@@ -48,6 +48,12 @@ function addToCart() {
 </template>
 
 <style scoped>
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
 .hover-scale {
     transition: transform 0.3s;
 }

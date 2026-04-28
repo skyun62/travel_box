@@ -26,10 +26,10 @@ import lamp3 from '@/assets/img/lamp_4_3.jpg'
 import lamp4 from '@/assets/img/lamp_4_4.jpg'
 
 const shoppingCards = [
-    { img: lamp1, smallTitle: 'Lamp A', description: 'Some quick example text', price: 1399 },
-    { img: lamp2, smallTitle: 'Lamp B', description: 'Some quick example text', price: 1999 },
-    { img: lamp3, smallTitle: 'Lamp C', description: 'Some quick example text', price: 2999 },
-    { img: lamp4, smallTitle: 'Lamp D', description: 'Some quick example text', price: 1799 },
+    { img: lamp1, smallTitle: '體驗課程A', description: 'This is a UI concept project. No actual purchase is available.', price: 1399 },
+    { img: lamp2, smallTitle: '體驗課程B', description: 'This is a UI concept project. No actual purchase is available.', price: 1999 },
+    { img: lamp3, smallTitle: '體驗課程C', description: 'This is a UI concept project. No actual purchase is available.', price: 2999 },
+    { img: lamp4, smallTitle: '體驗課程', description: 'This is a UI concept project. No actual purchase is available.', price: 1799 },
 ]
 
 //圖中有圖
@@ -73,8 +73,8 @@ const currentTab = ref('NEWS')
                     <img src="../assets/img/banner1_1.jpg" class="d-block w-100" alt="..." style="max-height: 80vh;">
 
                     <div class="text-start carousel-caption d-none d-md-block">
-                        <h2 class="display-1" style="font-weight: bold;">一切都剛好</h2>
-                        <p>為你的空間，找到剛剛好的存在</p>
+                        <h2 class="display-1" style="font-weight: bold;">美感主動找上你</h2>
+                        <p>一個裝滿了驚喜、細節與「不妥協」的盒子。</p>
                         <button type="button" class="btn btn-primary btn-mg">Sing up</button>
                     </div>
                 </div>
@@ -114,9 +114,8 @@ const currentTab = ref('NEWS')
     <main class="container py-3">
         <!-- 角色標題 -->
         <section class="row d-flex justify-content-center justify-content-center text-center p-4">
-            <span class="fs-2">Raw Denim Heirloom Man Braid</span>
-            <p>Blue bottle crucifix vinyI post-ironic four dollar toast vegan taxidermy. Gastropub
-                juice poutine, ramps microdosing banh mi pug.</p>
+            <span class="fs-2">抱歉，我們把好品味裝進了潘朵拉的盒子。</span>
+            <p>打開它，你可能會發現荷包失守，或者對平凡產生過敏。</p>
             <div class="bg-secondary" style="width: 100px; height: 3px;"></div>
         </section>
         <!-- 角色 -->
@@ -146,7 +145,14 @@ const currentTab = ref('NEWS')
         </section>
 
         <section class="mt-5">
-            <span class="fs-2">Travel Memories</span>
+            <div class="row p-5">
+                <div class="col-12 col-md-4">
+                    <span class="fs-4">不將就，就是幸福的關鍵</span>
+                </div>
+                <div class="col-12 col-md-8">
+                    <span>擇你所愛，讓靈感在舒適中自由流動。</span>
+                </div>
+            </div>
 
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
@@ -261,10 +267,10 @@ const currentTab = ref('NEWS')
                 Look more<i class="fa-solid fa-arrow-right"></i>
             </RouterLink>
         </div>
-        <!-- 購物卡片 -->
+        <!-- 部落格卡片 -->
         <section class="row">
-            <ShoppingCard v-for="(item, index) in shoppingCards" :key="index" :img="item.img"
-                :smallTitle="item.smallTitle" :description="item.description" :price="item.price" :index="index" />
+            <BlogCard v-for="(card, index) in blogCards" :key="index" :img="card.img" :smallTitle="card.smallTitle"
+                :description="card.description" />
 
         </section>
 
@@ -274,12 +280,10 @@ const currentTab = ref('NEWS')
         <section>
             <div class="row p-5">
                 <div class="col-12 col-md-4">
-                    <span class="fs-4">Master Cleanse Reliac Heirloom.</span>
+                    <span class="fs-4">從一件物件開始</span>
                 </div>
                 <div class="col-12 col-md-8">
-                    <span>Whatever cardigan tote bag tumbir hexagon brooklyn asymmetrical gentrify, subway tile poke
-                        farm-to-
-                        table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</span>
+                    <span>讓每一次的使用，都成為一場療癒身心的儀式。</span>
                 </div>
             </div>
         </section>
@@ -290,9 +294,8 @@ const currentTab = ref('NEWS')
         </section>
         <!-- 表格標題 -->
         <section class="row d-flex justify-content-center justify-content-center text-center p-5">
-            <span class="fs-2">Raw Denim Heirloom Man Braid</span>
-            <p>Blue bottle crucifix vinyI post-ironic four dollar toast vegan taxidermy. Gastropub
-                juice poutine, ramps microdosing banh mi pug.</p>
+            <span class="fs-2">選對的東西，放對的地方</span>
+            <p>不只賣家飾，我們把選品者走遍各地的眼光與心意，一件一件帶回來。</p>
             <div class="bg-secondary" style="width: 100px; height: 3px;"></div>
         </section>
         <!-- 表格 -->
@@ -301,13 +304,11 @@ const currentTab = ref('NEWS')
         <section>
             <div class="row py-5">
                 <div class="col-12 col-md-5">
-                    <span class="fs-5">Master Cleanse Reliac Heirloom.</span>
-                    <div class="bg-secondary mt-2" style="width: 100px; height: 3px;"></div>
+                    <span class="fs-5">探索本季選品</span>
+                    <div class="bg-secondary m-2" style="width: 100px; height: 3px;"></div>
                 </div>
                 <div class="col-12 col-md-7">
-                    <span>Whatever cardigan tote bag tumbir hexagon brooklyn asymmetrical gentrify, subway tile poke
-                        farm-to-
-                        table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</span>
+                    <span>「就是這個了」不解釋過多——好東西會自己說話。</span>
                 </div>
             </div>
         </section>
@@ -316,17 +317,35 @@ const currentTab = ref('NEWS')
         <TextImageBlock title="HeadingHeading" text="Some placeholder..." img="..." :reverse="true" />
         <TextImageBlock title="HeadingHeading" text="Some placeholder..." img="..." />
         <!-- 地圖資訊 -->
+        <div class="row p-5">
+                <div class="col-12 col-md-4">
+                    <span class="fs-4">座標</span>
+                </div>
+                <div class="col-12 col-md-8">
+                    <span>我們在城市的角落安置<br>地址：408臺中市南屯區向上路二段168號4樓
+                    </span>
+                </div>
+            </div>
         <MapContact @submit="(data) => console.log('表單送出', data)" />
-        <!-- blog卡片 -->
+        <!-- 購物卡片 -->
         <section class="row py-5" id="cardlist">
-            <BlogCard v-for="(card, index) in blogCards" :key="index" :img="card.img" :smallTitle="card.smallTitle"
-                :description="card.description" />
+            <div class="row p-3">
+                <div class="col-12 col-md-4">
+                    <span class="fs-4">或許，你也會喜歡</span>
+                </div>
+                <div class="col-12 col-md-8">
+                    <span>相遇是意外或是巧合。</span>
+                </div>
+            </div>
+            <ShoppingCard v-for="(item, index) in shoppingCards" :key="index" :img="item.img"
+                :smallTitle="item.smallTitle" :description="item.description" :price="item.price" :index="index" />
+            
         </section>
 
         <section>
             <Movie />
         </section>
-        <section>
+        <!-- <section>
             <TabMenu :tabs="tabs" :activeTab="currentTab" @change-tab="currentTab = $event" />
             <div class="tab-content">
                 <div v-show="currentTab === 'NEWS'" class="content-box">
@@ -355,8 +374,7 @@ const currentTab = ref('NEWS')
                     </ul>
                 </div>
             </div>
-
-        </section>
+        </section> -->
 
     </main>
 </template>

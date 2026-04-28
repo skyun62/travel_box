@@ -20,20 +20,20 @@ const skills = [
                 <img src="../assets/img/cloud.jpg" alt="profile photo" class="hero-img">
                 <div class="hero-deco"></div>
             </div>
+
             <div class="hero-text">
-                <p class="hero-tag">UI / UX Designer</p>
-                <h1 class="hero-name">Hi, I'm<br><span>Sky</span></h1>
+                <p class="hero-tag">☁ 家飾選品 × 品味故事</p>
+                <h1 class="hero-name">Cloud<br><span>BOX</span></h1>
                 <p class="hero-desc">
-                    熱愛旅行與設計的創作者。<br>
-                    我相信好的設計像一趟好的旅程——<br>
-                    每個細節都有意義，每個轉角都值得期待。
+                    每個物件背後都有一個我們想告訴你的理由
+                    <br>✦ Curated with intention. Lived in with love.
                 </p>
                 <div class="hero-btns">
                     <a href="https://www.104.com.tw" target="_blank" rel="noopener" class="btn-primary-custom">
-                        查看履歷 <i class="bi bi-arrow-up-right"></i>
+                        Resume <i class="bi bi-arrow-up-right"></i>
                     </a>
                     <RouterLink to="/" class="btn-ghost-custom">
-                        回首頁
+                        Back to Home
                     </RouterLink>
                 </div>
             </div>
@@ -45,23 +45,16 @@ const skills = [
         <section class="about-section container">
             <div class="about-grid">
                 <div class="about-left">
-                    <h2 class="section-title">About Me</h2>
+                    <h2 class="section-title">About US</h2>
                     <p>
-                        我是一名 UI/UX 設計師，專注於創造直覺、有溫度的使用者體驗。
-                        設計之於我，是解決問題的語言——用視覺說清楚邏輯，用互動傳遞情感。
-                    </p>
-                    <p>
-                        旅行是我的靈感來源。每到一個新地方，我都會觀察當地的標誌設計、
-                        空間配色、資訊排版，這些細節都悄悄滲入我的設計思維裡。
-                    </p>
-                    <p>
-                        這個網站是我的練習場：從靜態 HTML 重構為 Vue 3，
-                        在技術與設計之間找到自己的節奏。
+                        嗨，我們是 CloudBOX ☁️
+                        <br>一個把選品者的品味與生活故事，化成你家一角的地方。 
+                        <br>我們不賣「熱銷款」，我們只選我們真的喜歡的，然後用一點文字告訴你，為什麼這件東西值得。
                     </p>
                 </div>
 
                 <div class="about-right">
-                    <h2 class="section-title">Skills</h2>
+                    <h2 class="section-title">品味標籤</h2>
                     <div class="skills-grid">
                         <div v-for="skill in skills" :key="skill.label" class="skill-chip">
                             <i :class="['bi', skill.icon]"></i>
@@ -133,7 +126,7 @@ const skills = [
 .hero {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 100px;
     padding: 80px 10vw 60px;
     background: linear-gradient(135deg, #eaf4fb 0%, #f8f6f3 60%);
     flex-wrap: wrap;
@@ -145,7 +138,7 @@ const skills = [
 }
 
 .hero-img {
-    width: 280px;
+    width: 340px;
     height: 340px;
     object-fit: cover;
     border-radius: 4px 40px 4px 40px;
@@ -247,12 +240,12 @@ const skills = [
 
 /* ===== About + Skills ===== */
 .about-section {
-    padding: 0 0 20px;
+    padding: 0 60px;
 }
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 60px;
     align-items: start;
 }

@@ -1,5 +1,6 @@
 <script setup>
-// About 頁面：UI/UX 設計師個人介紹
+//表格
+import DataTable from '@/components/DataTable.vue'
 // 旅行日記主題配色：天空藍 #3a8fb7、玫瑰粉 #ba9393
 const skills = [
     { label: 'UI/UX Design', icon: 'bi-vector-pen' },
@@ -22,10 +23,10 @@ const skills = [
             </div>
 
             <div class="hero-text">
-                <p class="hero-tag">☁ 家飾選品 × 品味故事</p>
+                <p class="hero-tag">☁ 工藝 × 品味故事</p>
                 <h1 class="hero-name">Cloud<br><span>BOX</span></h1>
                 <p class="hero-desc">
-                    每個物件背後都有一個我們想告訴你的理由
+                    雲端裡的潘朵拉
                     <br>✦ Curated with intention. Lived in with love.
                 </p>
                 <div class="hero-btns">
@@ -47,33 +48,37 @@ const skills = [
                 <div class="about-left">
                     <h2 class="section-title">About US</h2>
                     <p>
-                        嗨，我們是 CloudBOX ☁️
-                        <br>一個把選品者的品味與生活故事，化成你家一角的地方。 
-                        <br>我們不賣「熱銷款」，我們只選我們真的喜歡的，然後用一點文字告訴你，為什麼這件東西值得。
+                        嗨，我們是 CloudBOX ☁️🎁
+                        <br>古老神話說，那個盒子裡裝著所有人類的苦與福。而我相信真正的工藝品，也有同樣的重量。
+                        <br>它裝著一個工匠的時間、一種瀕臨失傳的技藝、一塊泥土或一根纖維的前世今生。
+                        <br>
                     </p>
+                    <h2 class="section-title">About Me</h2>
+                    <p>
+                        嗨，我是SKY ☁️ 這個網站的製作者
+                        <br>一直以來，都很欣賞著那些在一個領域持續耕耘的人們，那種廢寢忘食卻快樂地散發能量的樣子，令我著迷。
+                        <br>因此我製作了這樣一個觀看的地方，觀看那些用雙手說話的人，觀看那些在日常器物裡藏著宇宙的作品，也想把這樣的美分享給你。
+                    </p>
+
+                    <h2 class="section-title">About source</h2>
+                    <p>
+                        這些是網站中的圖片來源
+                    </p>
+                    <!-- 表格 -->
+                    <DataTable @select="(row) => console.log('選到', row)" />
                 </div>
 
                 <div class="about-right">
-                    <h2 class="section-title">品味標籤</h2>
-                    <div class="skills-grid">
-                        <div v-for="skill in skills" :key="skill.label" class="skill-chip">
-                            <i :class="['bi', skill.icon]"></i>
-                            <span>{{ skill.label }}</span>
-                        </div>
-                    </div>
+
 
                     <div class="info-list">
                         <div class="info-row">
                             <span class="info-label">地點</span>
-                            <span>台中，台灣</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">現況</span>
-                            <span>Open to opportunities</span>
+                            <span>Taichung, Taiwan</span>
                         </div>
                         <div class="info-row">
                             <span class="info-label">聯繫</span>
-                            <a href="mailto:your@email.com" class="info-link">your@email.com</a>
+                            <a href="mailto:your@email.com" class="info-link">skyhuschi@email.com</a>
                         </div>
                     </div>
                 </div>

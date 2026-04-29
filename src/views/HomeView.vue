@@ -34,10 +34,17 @@ const shoppingCards = [
 
 //圖中有圖
 import PhotoMosaic from '@/components/PhotoMosaic.vue'
-//表格
-import DataTable from '@/components/DataTable.vue'
+
 //圖文區塊(三大區)
 import TextImageBlock from '@/components/TextImageBlock.vue'
+onMounted(() => {
+  // 其他你原本的 onMounted 內容...
+  
+  // 讓 IG embed 重新渲染
+  if (window.instgrm) {
+    window.instgrm.Embeds.process()
+  }
+})
 //地圖資訊
 import MapContact from '@/components/MapContact.vue'
 //blog卡片
@@ -72,8 +79,8 @@ const currentTab = ref('NEWS')
                 <div class="carousel-item active">
                     <img src="../assets/img/banner1_1.jpg" class="d-block w-100" alt="..." style="max-height: 80vh;">
 
-                    <div class="text-start carousel-caption d-none d-md-block">
-                        <h2 class="display-1" style="font-weight: bold;">美感主動找上你</h2>
+                    <div class="text-start carousel-caption d-none d-md-block ">
+                        <h2 class="display-1" style="font-weight: bold;">雲端裡的潘朵拉</h2>
                         <p>一個裝滿了驚喜、細節與「不妥協」的盒子。</p>
                         <button type="button" class="btn btn-primary btn-mg">Sing up</button>
                     </div>
@@ -114,8 +121,8 @@ const currentTab = ref('NEWS')
     <main class="container py-3">
         <!-- 角色標題 -->
         <section class="row d-flex justify-content-center justify-content-center text-center p-4">
-            <span class="fs-2">抱歉，我們把好品味裝進了潘朵拉的盒子。</span>
-            <p>打開它，你可能會發現荷包失守，或者對平凡產生過敏。</p>
+            <span class="fs-2">雲端裡的潘朵拉</span>
+            <p>只是一個純粹因為喜歡而凝視的人，然後把這份欣賞，分享給同樣想看見美的你。</p>
             <div class="bg-secondary" style="width: 100px; height: 3px;"></div>
         </section>
         <!-- 角色 -->
@@ -123,21 +130,36 @@ const currentTab = ref('NEWS')
             <div class="container">
                 <div class="row col-12 col-lg p-5">
                     <Role>
-                        <template #title>Poul Henningsen(丹麥)</template>
+                        <template #title>Marten Herma Anderson</template>
                         <template #content>
-                            PH 燈系列發明者，開創無眩光照明
+                            粗獷的原始材料中加入鮮豔、溫暖的色彩，讓作品在冷靜的結構中帶有玩味與感性
+                        </template>
+                        <template #action>
+                            <router-link to="/craftsman/1" class="btn btn-secondary">
+                                View detail
+                            </router-link>
                         </template>
                     </Role>
                     <Role>
-                        <template #title>Achille Castiglioni(義大利)</template>
+                        <template #title>伊藤美和<br>いとう みわ</template>
                         <template #content>
-                            經典拋物線 Arco 燈的創造者
+                            專注於讓日常器皿具備藝術裝飾性，平衡了實用功能與詩意的美學
+                        </template>
+                        <template #action>
+                            <router-link to="/craftsman/2" class="btn btn-secondary">
+                                View detail
+                            </router-link>
                         </template>
                     </Role>
                     <Role>
-                        <template #title>Ingo Maurer(德國)</template>
+                        <template #title>謝佳珍 <br>Chia Chen Hsieh</template>
                         <template #content>
-                            電燈泡轉化為藝術裝置的先驅
+                            利用竹篾交織出的孔隙與影子，創造出具備空氣感的藝術裝置
+                        </template>
+                        <template #action>
+                            <router-link to="/craftsman/3" class="btn btn-secondary">
+                                View detail
+                            </router-link>
                         </template>
                     </Role>
                 </div>
@@ -147,10 +169,10 @@ const currentTab = ref('NEWS')
         <section class="mt-5">
             <div class="row p-5">
                 <div class="col-12 col-md-4">
-                    <span class="fs-4">不將就，就是幸福的關鍵</span>
+                    <span class="fs-4">一輩子專心做一件事的工藝家</span>
                 </div>
-                <div class="col-12 col-md-8">
-                    <span>擇你所愛，讓靈感在舒適中自由流動。</span>
+                <div class="col-12 col-md-8 d-flex align-items-center">
+                    <span>擇所愛，讓靈感在舒適中自由流動。</span>
                 </div>
             </div>
 
@@ -280,10 +302,10 @@ const currentTab = ref('NEWS')
         <section>
             <div class="row p-5">
                 <div class="col-12 col-md-4">
-                    <span class="fs-4">從一件物件開始</span>
+                    <span class="fs-4">作品是生命的縮影</span>
                 </div>
-                <div class="col-12 col-md-8">
-                    <span>讓每一次的使用，都成為一場療癒身心的儀式。</span>
+                <div class="col-12 col-md-8 d-flex align-items-center">
+                    <span>曾經有個摯友跟我說過一段我很喜歡的話，他說：「買一個人的產品就像是買了他的故事、奮鬥，是因為有這些經歷他才可以做出這個東西、然後賣給你。」</span>
                 </div>
             </div>
         </section>
@@ -294,12 +316,14 @@ const currentTab = ref('NEWS')
         </section>
         <!-- 表格標題 -->
         <section class="row d-flex justify-content-center justify-content-center text-center p-5">
-            <span class="fs-2">選對的東西，放對的地方</span>
-            <p>不只賣家飾，我們把選品者走遍各地的眼光與心意，一件一件帶回來。</p>
+            <span class="fs-2">每一件工藝品，也許都是某個人一生的偏執</span>
+            <p>你未必知道所謂工藝的技法，但只需要感受那種「用心」的瞬間，那一刻，便是分享的起點，也是我想與你一同點燃的火花。</p>
             <div class="bg-secondary" style="width: 100px; height: 3px;"></div>
         </section>
-        <!-- 表格 -->
-        <DataTable @select="(row) => console.log('選到', row)" />
+
+
+
+
         <!-- 表格後標題 -->
         <section>
             <div class="row py-5">
@@ -308,24 +332,46 @@ const currentTab = ref('NEWS')
                     <div class="bg-secondary m-2" style="width: 100px; height: 3px;"></div>
                 </div>
                 <div class="col-12 col-md-7">
-                    <span>「就是這個了」不解釋過多——好東西會自己說話。</span>
+                    <span>「就是這個了」不解釋過多，好東西會自己說話。</span>
                 </div>
             </div>
         </section>
         <!-- 圖文區塊 -->
         <TextImageBlock title="HeadingHeading" text="Some placeholder..." img="..." />
         <TextImageBlock title="HeadingHeading" text="Some placeholder..." img="..." :reverse="true" />
-        <TextImageBlock title="HeadingHeading" text="Some placeholder..." img="..." />
+        <section class="row py-5 align-items-center">
+            <!-- 左：文字 -->
+            <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+                <h2 class="display-4 fw-bold">Marten Herma Anderson</h2>
+                <p class="mt-3">粗獷的原始材料中加入鮮豔、溫暖的色彩，讓作品在冷靜的結構中帶有玩味與感性。</p>
+                <a
+                href="https://www.instagram.com/mrtn.ndrsn/"
+                target="_blank"
+                class="mt-3 d-inline-block text-muted"
+                style="font-size: 13px; letter-spacing: 0.1em;"
+                >
+                @mrtn.ndrsn ↗
+                </a>
+            </div>
+
+            <!-- 右：IG embed -->
+            <div class="col-12 col-md-5 d-flex justify-content-center">
+                <blockquote class="instagram-media" data-instgrm-captioned
+                    data-instgrm-permalink="https://www.instagram.com/p/DV9BLnvDDIF/?utm_source=ig_embed&utm_campaign=loading"
+                    data-instgrm-version="14" style="max-width: 400px; width: 100%;"></blockquote>
+            </div>
+        </section>
+        <hr>
         <!-- 地圖資訊 -->
         <div class="row p-5">
-                <div class="col-12 col-md-4">
-                    <span class="fs-4">座標</span>
-                </div>
-                <div class="col-12 col-md-8">
-                    <span>我們在城市的角落安置<br>地址：408臺中市南屯區向上路二段168號4樓
-                    </span>
-                </div>
+            <div class="col-12 col-md-4">
+                <span class="fs-4">座標</span>
             </div>
+            <div class="col-12 col-md-8">
+                <span>我們在城市的角落安置<br>地址：408臺中市南屯區向上路二段168號4樓
+                </span>
+            </div>
+        </div>
         <MapContact @submit="(data) => console.log('表單送出', data)" />
         <!-- 購物卡片 -->
         <section class="row py-5" id="cardlist">
@@ -333,13 +379,13 @@ const currentTab = ref('NEWS')
                 <div class="col-12 col-md-4">
                     <span class="fs-4">或許，你也會喜歡</span>
                 </div>
-                <div class="col-12 col-md-8">
+                <div class="col-12 col-md-8 d-flex align-items-center">
                     <span>相遇是意外或是巧合。</span>
                 </div>
             </div>
             <ShoppingCard v-for="(item, index) in shoppingCards" :key="index" :img="item.img"
                 :smallTitle="item.smallTitle" :description="item.description" :price="item.price" :index="index" />
-            
+
         </section>
 
         <section>
@@ -375,7 +421,12 @@ const currentTab = ref('NEWS')
                 </div>
             </div>
         </section> -->
-
+        <div class="d-flex flex-wrap justify-content-end align-items-center gap-3 p-3">
+            <a href="#" class="btn-link fs-5 text-black p-2 d-flex justify-content-center align-items-center"
+                style="width: 200px; height: 40px;">
+                Go top <i class="fa-solid fa-arrow-up ms-2"></i>
+            </a>
+        </div>
     </main>
 </template>
 
@@ -510,6 +561,11 @@ const currentTab = ref('NEWS')
 
 .product-card:hover {
     transform: translateY(-4px);
+}
+
+/* 置頂 */
+.btn-link {
+    text-decoration: none;
 }
 
 /* 切換動畫 */

@@ -47,21 +47,7 @@ function onSelect(row) {
         </tbody>
     </table>
 
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 p-3">
-        <a href="#" class="btn-link fs-5 text-black p-2 d-flex justify-content-center align-items-center"
-            style="width: 200px; height: 40px;">
-            Learn more <i class="fa-solid fa-arrow-right ms-2"></i>
-        </a>
-        <a href="#"
-            class="bg-warning-subtle rounded fs-5 text-black p-2 d-flex justify-content-center align-items-center"
-            style="width: 150px; height: 40px;">
-            Button
-        </a>
-    </div>
 </template>
 
 <style scoped>
-.btn-link {
-    text-decoration: none;
-}
 </style>

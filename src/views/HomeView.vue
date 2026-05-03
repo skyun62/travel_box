@@ -16,10 +16,10 @@ import LikeButton from '@/components/LikeButton.vue';
 
 //購物卡片
 import ShoppingCard from '@/components/ShoppingCard.vue'
-import lamp1 from '@/assets/img/lamp_4_1.jpg'
-import lamp2 from '@/assets/img/lamp_4_2.jpg'
-import lamp3 from '@/assets/img/lamp_4_3.jpg'
-import lamp4 from '@/assets/img/lamp_4_4.jpg'
+import c_5 from '@/assets/img/c_5.jpg'
+import c_6 from '@/assets/img/c_6.jpg'
+import c_7 from '@/assets/img/c_7.jpg'
+import c_8 from '@/assets/img/c_8.jpg'
 //圖中有圖
 import PhotoMosaic from '@/components/PhotoMosaic.vue'
 
@@ -52,10 +52,10 @@ onMounted(() => {
 })
 
 const shoppingCards = [
-    { img: lamp1, smallTitle: '體驗課程A', description: 'This is a UI concept project. No actual purchase is available.', price: 1399 },
-    { img: lamp2, smallTitle: '體驗課程B', description: 'This is a UI concept project. No actual purchase is available.', price: 1999 },
-    { img: lamp3, smallTitle: '體驗課程C', description: 'This is a UI concept project. No actual purchase is available.', price: 2999 },
-    { img: lamp4, smallTitle: '體驗課程', description: 'This is a UI concept project. No actual purchase is available.', price: 1799 },
+    { img: c_5, smallTitle: '合作提案A', description: 'This is a UI concept project. No actual purchase is available.', price: "電洽" },
+    { img: c_6, smallTitle: '合作提案B', description: 'This is a UI concept project. No actual purchase is available.', price: "電洽" },
+    { img: c_7, smallTitle: '合作提案C', description: 'This is a UI concept project. No actual purchase is available.', price: "電洽" },
+    { img: c_8, smallTitle: '合作提案D', description: 'This is a UI concept project. No actual purchase is available.', price: "電洽" },
 ]
 
 const blogCards = [
@@ -97,18 +97,18 @@ const currentTab = ref('NEWS')
 
 
                 <div class="carousel-item">
-                    <img src="../assets/img/banner1_2.png" class="d-block w-100" alt="..." style="max-height: 80vh;">
+                    <img src="../assets/img/b_222.jpg" class="d-block w-100" alt="..." style="max-height: 80vh;">
                     <div class="text-center carousel-caption d-none d-md-block">
-                        <h2 class="display-1" style="font-weight: bold;">選好物，過好日</h2>
-                        <p>每一件選物，都是生活品味的延伸。</p>
+                        <h2 class="display-1" style="font-weight: bold;">一種瀕臨失傳的技藝</h2>
+                        <p>一塊泥土，或一根纖維的前世今生</p>
                         <button type="button" class="btn btn-primary btn-mg">Sing up</button>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../assets/img/banner1_3.jpg" class="d-block w-100" alt="..." style="max-height: 80vh;">
+                    <img src="../assets/img/b_333.jpg" class="d-block w-100" alt="..." style="max-height: 80vh;">
                     <div class="text-end carousel-caption d-none d-md-block">
-                        <h2 class="display-1" style="font-weight: bold;">你想回去哪裡?</h2>
-                        <p>打造一個讓你想回去的地方。</p>
+                        <h2 class="display-1" style="font-weight: bold;">火光點燃的瞬間</h2>
+                        <p>也是我們想留住的時刻</p>
                         <button type="button" class="btn btn-primary btn-mg">Sing up</button>
                     </div>
                 </div>
@@ -185,7 +185,74 @@ const currentTab = ref('NEWS')
                 </div>
             </div>
         </section>
+        <!-- 表格標題 -->
+        <section class="row d-flex justify-content-center justify-content-center text-center p-5">
+            <span class="fs-2">每一件工藝品，也許都是某個人一生的偏執</span>
+            <p>你未必知道所謂工藝的技法，但只需要感受那種「用心」的瞬間，那一刻，便是分享的起點。</p>
+            <div class="bg-secondary" style="width: 100px; height: 3px;"></div>
+        </section>
 
+        <!-- 圖文區塊 -->
+        <section class="row py-5 align-items-center">
+            <div class="col-12 col-md-5 d-flex justify-content-center">
+                <img :src="glass_candy" alt="Marten Herma Anderson 作品" class="w-100" style="object-fit: cover;" />
+            </div>
+            <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+                <h2 class="display-4 fw-bold">Marten Herma Anderson</h2>
+                <p class="mt-3">粗獷的原始材料中加入鮮豔、溫暖的色彩，讓作品在冷靜的結構中帶有玩味與感性。</p>
+                <a href="https://www.instagram.com/mrtn.ndrsn/" target="_blank" class="mt-3 d-inline-block text-muted"
+                    style="font-size: 13px; letter-spacing: 0.1em;">
+                    @mrtn.ndrsn ↗
+                </a>
+            </div>
+        </section>
+        <hr>
+        <section class="row py-5 align-items-center">
+            <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+                <h2 class="display-4 fw-bold">いとう みわ(伊藤美和)</h2>
+                <p class="mt-3">專注於讓日常器皿具備藝術裝飾性，平衡了實用功能與詩意的美學。</p>
+                <a href="https://www.instagram.com/miwaito.official/" target="_blank"
+                    class="mt-3 d-inline-block text-muted" style="font-size: 13px; letter-spacing: 0.1em;">
+                    @miwaito.official ↗
+                </a>
+            </div>
+            <div class="col-12 col-md-5 d-flex justify-content-center">
+                <img :src="glass_fish" alt="Marten Herma Anderson 作品" class="w-100" style="object-fit: cover;" />
+            </div>
+        </section>
+        <hr>
+        <section class="row py-5 align-items-center">
+            <!-- 左：IG embed -->
+            <div class="col-12 col-md-5 d-flex justify-content-center">
+                <img :src="glass_black" alt="Marten Herma Anderson 作品" class="w-100" style="object-fit: cover;" />
+            </div>
+            <!-- 右：文字 -->
+            <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+                <h2 class="display-4 fw-bold">陳建志(Chien Chih Chen)</h2>
+                <p class="mt-3">台灣玻璃工藝者，從工業設計走向傳統玲瓏窯，將日常記憶凝結成晶瑩的工藝詩篇。</p>
+                <a href="https://www.instagram.com/ccc.117/" target="_blank" class="mt-3 d-inline-block text-muted"
+                    style="font-size: 13px; letter-spacing: 0.1em;">
+                    @ccc.117 ↗
+                </a>
+            </div>
+        </section>
+        <!-- 圖中有圖的標題 -->
+        <section>
+            <div class="row p-5">
+                <div class="col-12 col-md-4">
+                    <span class="fs-4">作品是生命的縮影</span>
+                    <div class="bg-secondary m-2" style="width: 100px; height: 3px;"></div>
+                </div>
+                <div class="col-12 col-md-8 d-flex align-items-center">
+                    <span>曾經有個摯友跟我說過一段我很喜歡的話，他說：「買一個人的產品就像是買了他的故事、奮鬥，是因為有這些經歷他才可以做出這個東西、然後賣給你。」</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 圖中有圖 -->
+        <section>
+            <PhotoMosaic />
+        </section>
         <section class="mt-5">
             <div class="row p-5">
                 <div class="col-12 col-md-4">
@@ -318,88 +385,8 @@ const currentTab = ref('NEWS')
 
 
 
-        <!-- 圖中有圖的標題 -->
-        <section>
-            <div class="row p-5">
-                <div class="col-12 col-md-4">
-                    <span class="fs-4">作品是生命的縮影</span>
-                </div>
-                <div class="col-12 col-md-8 d-flex align-items-center">
-                    <span>曾經有個摯友跟我說過一段我很喜歡的話，他說：「買一個人的產品就像是買了他的故事、奮鬥，是因為有這些經歷他才可以做出這個東西、然後賣給你。」</span>
-                </div>
-            </div>
-        </section>
+        
 
-        <!-- 圖中有圖 -->
-        <section>
-            <PhotoMosaic />
-        </section>
-        <!-- 表格標題 -->
-        <section class="row d-flex justify-content-center justify-content-center text-center p-5">
-            <span class="fs-2">每一件工藝品，也許都是某個人一生的偏執</span>
-            <p>你未必知道所謂工藝的技法，但只需要感受那種「用心」的瞬間，那一刻，便是分享的起點，也是我想與你一同點燃的火花。</p>
-            <div class="bg-secondary" style="width: 100px; height: 3px;"></div>
-        </section>
-
-
-
-
-        <!-- 表格後標題 -->
-        <section>
-            <div class="row py-5">
-                <div class="col-12 col-md-5">
-                    <span class="fs-5">探索本季選品</span>
-                    <div class="bg-secondary m-2" style="width: 100px; height: 3px;"></div>
-                </div>
-                <div class="col-12 col-md-7">
-                    <span>「就是這個了」不解釋過多，好東西會自己說話。</span>
-                </div>
-            </div>
-        </section>
-        <!-- 圖文區塊 -->
-        <section class="row py-5 align-items-center">
-            <div class="col-12 col-md-5 d-flex justify-content-center">
-                <img :src="glass_candy" alt="Marten Herma Anderson 作品" class="w-100" style="object-fit: cover;" />
-            </div>
-            <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
-                <h2 class="display-4 fw-bold">Marten Herma Anderson</h2>
-                <p class="mt-3">粗獷的原始材料中加入鮮豔、溫暖的色彩，讓作品在冷靜的結構中帶有玩味與感性。</p>
-                <a href="https://www.instagram.com/mrtn.ndrsn/" target="_blank" class="mt-3 d-inline-block text-muted"
-                    style="font-size: 13px; letter-spacing: 0.1em;">
-                    @mrtn.ndrsn ↗
-                </a>
-            </div>
-        </section>
-        <hr>
-        <section class="row py-5 align-items-center">
-            <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
-                <h2 class="display-4 fw-bold">いとう みわ(伊藤美和)</h2>
-                <p class="mt-3">專注於讓日常器皿具備藝術裝飾性，平衡了實用功能與詩意的美學。</p>
-                <a href="https://www.instagram.com/miwaito.official/" target="_blank"
-                    class="mt-3 d-inline-block text-muted" style="font-size: 13px; letter-spacing: 0.1em;">
-                    @miwaito.official ↗
-                </a>
-            </div>
-            <div class="col-12 col-md-5 d-flex justify-content-center">
-                <img :src="glass_fish" alt="Marten Herma Anderson 作品" class="w-100" style="object-fit: cover;" />
-            </div>
-        </section>
-        <hr>
-        <section class="row py-5 align-items-center">
-            <!-- 左：IG embed -->
-            <div class="col-12 col-md-5 d-flex justify-content-center">
-                <img :src="glass_black" alt="Marten Herma Anderson 作品" class="w-100" style="object-fit: cover;" />
-            </div>
-            <!-- 右：文字 -->
-            <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
-                <h2 class="display-4 fw-bold">陳建志(Chien Chih Chen)</h2>
-                <p class="mt-3">台灣玻璃工藝者，從工業設計走向傳統玲瓏窯，將日常記憶凝結成晶瑩的工藝詩篇。</p>
-                <a href="https://www.instagram.com/ccc.117/" target="_blank" class="mt-3 d-inline-block text-muted"
-                    style="font-size: 13px; letter-spacing: 0.1em;">
-                    @ccc.117 ↗
-                </a>
-            </div>
-        </section>
 
         <!-- 地圖資訊 -->
         <div class="row p-5">

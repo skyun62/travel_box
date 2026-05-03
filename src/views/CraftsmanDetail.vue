@@ -4,49 +4,49 @@ import { useRoute } from 'vue-router'
 
 const craftsmen = [
     {
-        id: 1,
-        name: 'Marten Herma Anderson',
-        origin: '德國',
-        year: 1971,
-        material: '陶土 · 礦物釉料',
-        quote: '好的光線不該讓人察覺光源的存在。',
-        description: '將建築邏輯植入陶土，在理性的地質層次中尋找詩意。',
-        story: 'Marten 在柏林包浩斯學院受訓，深受構成主義影響。他的作品拒絕裝飾，以材料本身的紋理與結構說話。每一件陶器都像一座縮小的建築——有承重、有空間、有光影的流動。',
-        tags: ['#陶藝', '#建築感', '#極簡主義', '#包浩斯', '#礦物釉'],
-        works: 134,
-        exhibitions: 22,
-        awards: 8,
-        gallery: ['陶土系列 I', '地質釉彩', '構成器皿', '建築陶塑']
+        "id": 1,
+        "name": "Marten Herma Anderson",
+        "origin": "德國",
+        "year": 1990,
+        "material": "繪畫 / 數位介質",
+        "quote": "色彩的沈默有時比聲音更響亮。",
+        "description": "致力於極簡主義與色彩理論的探索，透過色塊與線條的對話尋找空間的平衡。",
+        "story": "Marten 的創作深受柏林城市景觀與包浩斯風格影響。他習慣將複雜的視覺元素簡化至極致，讓觀者在單純的色塊中感受情緒的起伏與空間的深度。",
+        "tags": ["#極簡主義", "#當代藝術", "#色彩理論", "#德國藝術家", "#抽象表現"],
+        "works": 42,
+        "exhibitions": 12,
+        "awards": 4,
+        "gallery": ["藍色構圖 01", "重疊的平面", "晨曦之影", "線條與節奏"]
     },
     {
-        id: 2,
-        name: '伊藤美和（いとう みわ）',
-        origin: '日本',
-        year: 1983,
-        material: '吹製玻璃 · 色釉',
-        quote: '雖為玻璃質地，卻展現出如雲朵或流體般的有機邊緣。',
-        description: '以童趣幽默顛覆玻璃形態，打造充滿生命力的超現實物件。',
-        story: '伊藤美和在京都學習傳統吹製玻璃，卻選擇走向截然不同的方向。她的作品常帶著一種幽默的荒誕感——像是玻璃在某個夢境中被重新定義了形狀的規則。',
-        tags: ['#玻璃藝術', '#超現實', '#有機造型', '#日本工藝', '#色彩實驗'],
-        works: 89,
-        exhibitions: 17,
-        awards: 11,
-        gallery: ['流體玻璃 I', '雲邊系列', '色域實驗', '有機器皿']
+        "id": 2,
+        "name": "いとう みわ (伊藤美和)",
+        "origin": "日本",
+        "year": 1975,
+        "material": "陶藝創作",
+        "quote": "器皿是盛裝生活溫度的容器。",
+        "description": "以細膩的陶藝工法結合日常觀察，創作出具備手感溫度且充滿詩意的生活器物。",
+        "story": "伊藤美和在常滑市研習陶藝多年，她擅長捕捉大自然中微小的變化。對她而言，陶土不只是素材，更是連結土地與使用者生活記憶的媒介。",
+        "tags": ["#日本工藝", "#現代陶藝", "#器皿設計", "#手作美學", "#生活物件"],
+        "works": 120,
+        "exhibitions": 25,
+        "awards": 8,
+        "gallery": ["暖白裂紋杯", "四季之盤", "森林花器", "土地呼吸系列"]
     },
     {
-        id: 3,
-        name: '謝佳珍 (Chia Chen Hsieh)',
-        origin: '台灣',
-        year: 1988,
-        material: '孟宗竹 · 天然漆',
-        quote: '靈感源於自然界線條，將韌性十足的竹材轉化為流動語言。',
-        description: '利用竹編孔隙創造空氣感與動態的陰影變化。',
-        story: '謝佳珍在南投長大，竹林是她童年最熟悉的風景。她將傳統竹編工法與當代設計語彙融合，讓竹子不再只是工具，而是能傳遞情感與空間感受的媒介。',
-        tags: ['#竹編', '#台灣工藝', '#永續材料', '#光影設計', '#自然語彙'],
-        works: 67,
-        exhibitions: 14,
-        awards: 6,
-        gallery: ['竹光裝置', '孔隙系列', '流動竹編', '陰影器物']
+        "id": 3,
+        "name": "陳建志 (Chien-Chih, Chen)",
+        "origin": "台灣",
+        "year": 1994,
+        "material": "吹製玻璃",
+        "quote": "我向一無所有的白學習，也向繁複無盡的白學習。",
+        "description": "融合傳統吹製技法與現代設計，擅長運用乳白玻璃原料，在透明與半透明間捕捉光影流動的記憶。",
+        "story": "出生於南投，銘傳大學商品設計系畢業後，在一次偶然中深受玻璃製作過程吸引，決定投入新竹「玲瓏窯」跟隨林瑤農大師學習。他創立了 CCC Glass Works，將玻璃視為記錄時間與情感的容器，特別珍惜在製作過程中產生的隨機性與手工痕跡。",
+        "tags": ["#吹製玻璃", "#新竹工藝", "#CCC玻璃製作所", "#白玉系列", "#當代工藝"],
+        "works": 85,
+        "exhibitions": 10,
+        "awards": 5,
+        "gallery": ["黑玉系列", "白玉系列", "記憶之壺", "水鏡浮島"]
     }
 ]
 
@@ -210,7 +210,7 @@ const craftsman = computed(() =>
 
 /* ── HERO ── */
 .hero {
-    padding:50px;
+    padding: 50px;
     display: grid;
     grid-template-columns: 55% 45%;
     min-height: 100vh;
@@ -367,7 +367,7 @@ const craftsman = computed(() =>
 .quote-inner {
     max-width: 760px;
     margin: 0 auto;
-    padding:3rem 2rem;
+    padding: 3rem 2rem;
     text-align: center;
 }
 

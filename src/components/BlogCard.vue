@@ -9,7 +9,7 @@ defineProps({
 <template>
     <div class="col-12 col-sm-6 col-md-3 mb-2">
         <div class="card p-2 hover-scale">
-            <img :src="img" class="card-img-top" :alt="smallTitle">
+            <img :src="img" class="card-img-top" :alt="smallTitle" style="height: 220px; object-fit: cover;">
             <div class="card-body">
                 <h5 class="card-title">{{ smallTitle }}</h5>
                 <p class="card-text">{{ description }}</p>

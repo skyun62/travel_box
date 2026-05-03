@@ -31,7 +31,10 @@ import glass_black from '@/assets/img/glass_black.png'
 import MapContact from '@/components/MapContact.vue'
 //blog卡片
 import BlogCard from '@/components/BlogCard.vue'
-import banner1_1 from '@/assets/img/banner1_1.jpg'
+import c_1 from '@/assets/img/c_1.jpg'
+import c_2 from '@/assets/img/c_2.jpg'
+import c_3 from '@/assets/img/c_3.jpg'
+import c_4 from '@/assets/img/c_4.jpg'
 //頁籤
 import { ref } from 'vue'
 import TabMenu from '@/components/TabMenu.vue'
@@ -56,10 +59,10 @@ const shoppingCards = [
 ]
 
 const blogCards = [
-    { img: banner1_1, smallTitle: 'Card title', description: 'Some quick example text to build on the card title.' },
-    { img: banner1_1, smallTitle: 'Card title', description: 'Some quick example text to build on the card title.' },
-    { img: banner1_1, smallTitle: 'Card title', description: 'Some quick example text to build on the card title.' },
-    { img: banner1_1, smallTitle: 'Card title', description: 'Some quick example text to build on the card title.' },
+    { img: c_1, smallTitle: 'Card title', description: 'Some quick example text to build on the card title.' },
+    { img: c_2, smallTitle: 'Card title', description: 'Some quick example text to build on the card title.' },
+    { img: c_3, smallTitle: 'Card title', description: 'Some quick example text to build on the card title.' },
+    { img: c_4, smallTitle: 'Card title', description: 'Some quick example text to build on the card title.' },
 ]
 
 const tabs = ['NEWS', 'HOT', '推薦']
@@ -79,12 +82,15 @@ const currentTab = ref('NEWS')
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../assets/img/banner1_1.jpg" class="d-block w-100" alt="..." style="max-height: 80vh;">
+                    <video class="d-block w-100" style="max-height: 80vh; object-fit: cover;" autoplay muted loop
+                        playsinline>
+                        <source src="../assets/video/video_2.mp4" type="video/mp4">
+                    </video>
 
-                    <div class="text-start carousel-caption d-none d-md-block ">
+                    <div class="text-start carousel-caption d-none d-md-block">
                         <h2 class="display-1" style="font-weight: bold;">雲端裡的潘朵拉</h2>
                         <p>一個裝滿了驚喜、細節與「不妥協」的盒子。</p>
-                        <button type="button" class="btn btn-primary btn-mg">Sing up</button>
+                        <button type="button" class="btn btn-primary btn-mg">Sign up</button>
                     </div>
                 </div>
 
